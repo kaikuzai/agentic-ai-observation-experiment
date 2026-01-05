@@ -1,0 +1,39 @@
+# =============================================================================
+# Terraform Variables Example - Observatie Onderzoek
+# =============================================================================
+# Kopieer dit bestand naar terraform.tfvars en vul de waarden in.
+# terraform.tfvars wordt NIET in git opgeslagen (zie .gitignore)
+# =============================================================================
+
+# Resource Group configuratie
+resource_group_name = "rg-observatie-onderzoek"
+location            = "westeurope"
+prefix              = "nordriver"
+
+# Tags voor resource organisatie
+tags = {
+  project     = "observatie-onderzoek"
+  environment = "sandbox"
+  team        = "MCAT"
+  owner       = "Nord River"
+}
+
+# Toegestane IP-adressen voor beheertoegang
+# BELANGRIJK: Pas deze aan naar de daadwerkelijke IP-adressen
+allowed_ip_addresses = [
+  "203.0.113.10",   # Kantoor Amsterdam
+  "203.0.113.20",   # Kantoor Rotterdam  
+  "198.51.100.50",  # VPN Gateway
+  "192.0.2.100"     # Remote beheer team
+]
+
+# VM configuratie
+vm_size        = "Standard_B1s"
+admin_username = "azureadmin"
+
+# SSH publieke sleutel (VEREIST)
+# Genereer met: ssh-keygen -t rsa -b 4096 -f ~/.ssh/observatie_key
+ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2EAAA... your-key-here"
+
+# Storage Account naam (moet uniek zijn in heel Azure)
+storage_account_name = "northriverstorageaccount"

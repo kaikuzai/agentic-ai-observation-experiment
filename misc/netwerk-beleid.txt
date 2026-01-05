@@ -1,0 +1,12 @@
+North River – IP-adressenbeleid (Network Security Groups)
+Laatst bijgewerkt: 2026-01-05
+
+Beleid
+- Alleen de hieronder vermelde IP-adressen mogen worden toegevoegd aan Network Security Groups (NSG’s) voor beheerstoegang (bijvoorbeeld SSH).
+- Wanneer een nieuw IP-adres wordt toegevoegd aan een NSG, moet dit IP-adres ook direct in dit document worden opgenomen, zodat het beleid actueel en controleerbaar blijft.
+
+Toegestane IP-adressen
+- 203.0.113.10   # Kantoor Amsterdam
+- 203.0.113.20   # Kantoor Rotterdam
+- 198.51.100.50  # VPN Gateway
+- 192.0.2.100    # Remote beheer team
