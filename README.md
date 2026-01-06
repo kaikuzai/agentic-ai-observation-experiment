@@ -1,8 +1,58 @@
-# Observatie Onderzoek Azure Sandbox
+# Agentic AI Observation & Validation Sandbox
 
-## Overview
+## Objective
 
-This repository contains a scenario-driven Azure sandbox for observation research, designed to simulate and manage a cloud environment for the North River organization. The project uses a multi-agent architecture (helper, knowledge, network, resource agents) and Terraform for provisioning Azure resources.
+This repository is designed as a flexible testbed for developing, validating, and comparing different agentic AI architectures and responsibilities in a realistic cloud scenario. It enables researchers and developers to:
+
+- Prototype and benchmark multi-agent systems for cloud management and troubleshooting
+- Experiment with agent roles, workflows, and tool integrations (e.g. resource, network, knowledge, helper agents)
+- Observe agent behavior and interactions in a controlled Azure environment
+- Validate agentic approaches for knowledge management, infrastructure automation, and security operations
+
+The included scenario (North River organization) provides a concrete context, but the architecture is modular and can be adapted for other domains or agentic experiments.
+
+---
+
+## Running Your Own Environment
+
+To run your own agentic AI sandbox:
+
+1. **Clone the repository**
+   ```sh
+   git clone <repo-url>
+   cd agentic-ai-observation-experiment
+   ```
+2. **Install Python dependencies**
+   ```sh
+   pip install -r requirements.txt
+   ```
+3. **Provision Azure resources with Terraform**
+   ```sh
+   cd infra
+   terraform init
+   terraform plan
+   terraform apply
+   ```
+4. **Configure environment variables**
+   Create a `.env` file in the root with your Azure credentials and storage info:
+
+   ```env
+   AZURE_STORAGE_ACCOUNT_NAME=northriverknowledgebase
+   AZURE_STORAGE_ACCOUNT_KEY=<your_access_key>
+   AZURE_STORAGE_ACCOUNT_URL=https://northriverknowledgebase.blob.core.windows.net
+   # Add other secrets as needed
+   ```
+
+   **Important:** Never commit your `.env` or secrets to Git.
+
+5. **Run agents and tests**
+   - Use the provided Python scripts to interact with agents
+   - Run unit tests with:
+     ```sh
+     python -m unittest discover tests
+     ```
+
+You can extend the scenario, add new agents, or modify workflows to suit your research or validation needs.
 
 ---
 
@@ -39,7 +89,7 @@ This repository contains a scenario-driven Azure sandbox for observation researc
 
 1. **Clone the repository**
    ```sh
-   git clone <repo-url>
+   git clone https://github.com/kaikuzai/agentic-ai-observation-experiment
    cd observatie-onderzoek
    ```
 2. **Install Python dependencies**
@@ -80,17 +130,7 @@ This repository contains a scenario-driven Azure sandbox for observation researc
 - **.env in `.gitignore`**: Ensure your `.env` file is never committed
 - **Approval modes**: Write actions (e.g., adding/removing NSG rules, modifying blobs) require explicit approval
 
----
-
-## Testing
-
-- **Test files**: Unit tests for agent workflows are in `tests/`
-- **Run tests**:
-  ```sh
-  python -m unittest discover tests
-  ```
-
----
+--
 
 ## Scenario
 
@@ -100,7 +140,7 @@ This project is designed for observation research in an Azure environment. The N
 
 ## Contact & Support
 
-For questions or support: contact the MCAT team.
+For questions or support: contact me using dylan.okyere@gmail.com
 
 ---
 
